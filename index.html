@@ -877,4 +877,12 @@
   }
 
   // ── Trigger hero reveals immediately
-  window.addEventList
+  window.addEventListener('load', () => {
+    document.querySelectorAll('#hero .reveal').forEach(el => {
+      const delay = parseInt(el.className.match(/delay-(\d)/)?.[1] || 0) * 120;
+      setTimeout(() => el.classList.add('visible'), 200 + delay);
+    });
+  });
+</script>
+</body>
+</html>
